@@ -82,12 +82,7 @@ models:
           - not_null
           - unique
       - name: promo_id
-        description: TODO
-        tests:
-          - not_null
-          - relationships:
-              to: ref('promos')
-              field: promo_id
+        description: TODO          
       - name: user_id
         description: TODO
         tests:
