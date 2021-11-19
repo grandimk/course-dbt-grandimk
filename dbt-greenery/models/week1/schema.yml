@@ -159,9 +159,9 @@ models:
 
 
     - name: stg_users
-    description: >
-      TODO
-    columns:
+      description: >
+        TODO
+      columns:
       - name: user_id
         description: TODO
         tests:
