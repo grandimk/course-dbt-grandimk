@@ -185,6 +185,8 @@ models:
           - not_null
       - name: address_id
         description: TODO
-        - relationships:
+        tests:
+          - not_null
+          - relationships:
               to: ref('addresses')
               field: address_id
