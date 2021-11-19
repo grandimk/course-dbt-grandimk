@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: greenery
+    schema: dbt
+    
+    tables:
+      - name: events
+        description: >
+          One record per event, containing users event details (type, url and creation) 
+
+      - name: order_items
+        description: >
+          One record per event
+
+      - name: orders
+        description: >
+          One record per order, containing order details
+
+      - name: products
+        description: >
+          One record per product, containing products name, price and quantity
+
+      - name: promos
+        description: >
+          One record per promo, containing promos discount and status
+
+      # Note: additional table in the db, not depicted in the ERD
+      # - name: superheroes
+
+      - name: users
+        description: >
+          One record per user, containing users information
