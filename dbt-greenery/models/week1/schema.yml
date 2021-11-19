@@ -158,10 +158,10 @@ models:
         description: TODO
 
 
-    - name: stg_users
-      description: >
-        TODO
-      columns:
+  - name: stg_users
+    description: >
+      TODO
+    columns:
       - name: user_id
         description: TODO
         tests:
