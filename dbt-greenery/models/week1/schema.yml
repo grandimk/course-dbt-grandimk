@@ -31,7 +31,7 @@ models:
           - unique
       - name: session_id
         description: TODO
-          tests:
+        tests:
           - not_null
       - name: user_id
         description: TODO
