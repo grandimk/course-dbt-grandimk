@@ -5,29 +5,33 @@ sources:
     schema: dbt
     
     tables:
+      - name: addresses
+        description: >
+          One record per address. Contains addresses details (zip, state and country)
+
       - name: events
         description: >
-          One record per event, containing users event details (type, url and creation) 
+          One record per event. Contains users events details (type, url and creation) 
 
       - name: order_items
         description: >
-          One record per event
+          One record per item in a given order. Contains quantity of an item in a order
 
       - name: orders
         description: >
-          One record per order, containing order details
+          One record per order. Contains orders details
 
       - name: products
         description: >
-          One record per product, containing products name, price and quantity
+          One record per product. Contains products name, price and quantity
 
       - name: promos
         description: >
-          One record per promo, containing promos discount and status
+          One record per promo. Contains promos discount and status
 
       # Note: additional table in the db, not depicted in the ERD
       # - name: superheroes
 
       - name: users
         description: >
-          One record per user, containing users information
+          One record per user. Contains users information
