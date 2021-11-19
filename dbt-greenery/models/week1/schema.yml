@@ -1,0 +1,190 @@
+version: 2
+
+models:
+  - name: stg_addresses
+    description: >
+      TODO
+    columns:
+      - name: address_id
+        description: TODO
+        tests:
+          - not_null
+          - unique
+      - name: address
+        description: TODO
+      - name: zipcode
+        description: TODO
+      - name: state
+        description: TODO
+      - name: country
+        description: TODO
+
+
+  - name: stg_events
+    description: >
+      TODO
+    columns:
+      - name: event_id
+        description: TODO
+        tests:
+          - not_null
+          - unique
+      - name: session_id
+        description: TODO
+          tests:
+          - not_null
+      - name: user_id
+        description: TODO
+        tests:
+          - not_null
+          - relationships:
+              to: ref('users')
+              field: user_id
+      - name: event_type
+        description: TODO
+        tests:
+          - not_null
+      - name: page_url
+        description: TODO
+      - name: created_at
+        description: TODO
+
+
+  - name: stg_order_items
+    description: >
+      TODO
+    columns:
+      - name: order_id
+        description: TODO
+        tests:
+          - not_null
+          - relationships:
+              to: ref('orders')
+              field: order_id
+      - name: product_id
+        description: TODO
+        tests:
+          - not_null
+          - relationships:
+              to: ref('products')
+              field: product_id
+      - name: quantity
+        description: TODO
+
+
+  - name: stg_orders
+    description: >
+      TODO
+    columns:
+      - name: order_id
+        description: TODO
+        tests:
+          - not_null
+          - unique
+      - name: promo_id
+        description: TODO
+        tests:
+          - not_null
+          - relationships:
+              to: ref('promos')
+              field: promo_id
+      - name: user_id
+        description: TODO
+        tests:
+          - not_null
+          - relationships:
+              to: ref('users')
+              field: user_id
+      - name: address_id
+        description: TODO
+        tests:
+          - not_null
+          - relationships:
+              to: ref('addresses')
+              field: address_id
+      - name: created_at
+        description: TODO
+      - name: order_cost
+        description: TODO
+        tests:
+          - not_null
+      - name: shipping_cost
+        description: TODO
+      - name: order_total
+        description: TODO
+      - name: tracking_id
+        description: TODO
+      - name: shipping_service
+        description: TODO
+      - name: estimated_delivery_at
+        description: TODO
+      - name: delivered_at
+        description: TODO
+      - name: status
+        description: TODO
+
+
+  - name: stg_products
+    description: >
+      TODO
+    columns:
+      - name: product_id
+        description: TODO
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: TODO
+      - name: price
+        description: TODO
+      - name: quantity
+        description: TODO
+
+
+  - name: stg_promos
+    description: >
+      TODO
+    columns:
+      - name: promo_id
+        description: TODO
+        tests:
+          - not_null
+          - unique
+      - name: discout
+        description: TODO
+        tests:
+          - not_null
+      - name: status
+        description: TODO
+
+
+    - name: stg_users
+    description: >
+      TODO
+    columns:
+      - name: user_id
+        description: TODO
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: TODO
+      - name: last_name
+        description: TODO
+      - name: email
+        description: TODO
+      - name: phone_number
+        description: TODO
+      - name: created_at
+        description: TODO
+        tests:
+          - not_null
+      - name: updated_at
+        description: TODO
+        tests:
+          - not_null
+      - name: address_id
+        description: TODO
+        - relationships:
+              to: ref('addresses')
+              field: address_id
