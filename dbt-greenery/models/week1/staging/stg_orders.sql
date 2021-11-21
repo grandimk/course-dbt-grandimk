@@ -19,3 +19,4 @@ SELECT
     delivered_at,
     status
 FROM {{ source('greenery', 'orders') }}
+WHERE created_at IS NOT NULL

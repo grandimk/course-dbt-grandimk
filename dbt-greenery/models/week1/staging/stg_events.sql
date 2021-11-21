@@ -12,3 +12,4 @@ SELECT
     page_url,
     created_at
 FROM {{ source('greenery', 'events') }}
+WHERE created_at IS NOT NULL

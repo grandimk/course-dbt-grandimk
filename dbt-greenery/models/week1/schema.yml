@@ -101,7 +101,6 @@ models:
       - name: order_total
         tests:
           - not_null
-          - positive_values
       - name: tracking_id
       - name: shipping_service
       - name: estimated_delivery_at
