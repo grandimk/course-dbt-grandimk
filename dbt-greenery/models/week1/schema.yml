@@ -3,183 +3,168 @@ version: 2
 models:
   - name: stg_addresses
     description: >
-      TODO
+      Table containing the addresses of the users
     columns:
       - name: address_id
-        description: TODO
         tests:
           - not_null
           - unique
       - name: address
-        description: TODO
       - name: zipcode
-        description: TODO
       - name: state
-        description: TODO
       - name: country
-        description: TODO
 
 
   - name: stg_events
     description: >
-      TODO
+      Table containing the events of the users on the website
     columns:
       - name: event_id
-        description: TODO
         tests:
           - not_null
           - unique
       - name: session_id
-        description: TODO
         tests:
           - not_null
       - name: user_id
-        description: TODO
         tests:
           - not_null
           - relationships:
               to: ref('users')
               field: user_id
       - name: event_type
-        description: TODO
         tests:
           - not_null
       - name: page_url
-        description: TODO
+        tests:
+          - not_null
       - name: created_at
-        description: TODO
+        tests:
+          - not_null
 
 
   - name: stg_order_items
     description: >
-      TODO
+      Table containing the association between an order
+      and the list of products it consists of
     columns:
       - name: order_id
-        description: TODO
         tests:
           - not_null
           - relationships:
               to: ref('orders')
               field: order_id
       - name: product_id
-        description: TODO
         tests:
           - not_null
           - relationships:
               to: ref('products')
               field: product_id
       - name: quantity
-        description: TODO
+        tests:
+          - positive_values
 
 
   - name: stg_orders
     description: >
-      TODO
+      Table containing the orders of the users
     columns:
       - name: order_id
-        description: TODO
         tests:
           - not_null
           - unique
       - name: promo_id
         description: TODO          
       - name: user_id
-        description: TODO
         tests:
           - not_null
           - relationships:
               to: ref('users')
               field: user_id
       - name: address_id
-        description: TODO
         tests:
           - not_null
           - relationships:
               to: ref('addresses')
               field: address_id
       - name: created_at
-        description: TODO
-      - name: order_cost
-        description: TODO
         tests:
           - not_null
+      - name: order_cost
+        tests:
+          - not_null
+          - positive_values
       - name: shipping_cost
-        description: TODO
+        tests:
+          - not_null
+          - positive_values
       - name: order_total
-        description: TODO
+        tests:
+          - not_null
+          - positive_values
       - name: tracking_id
-        description: TODO
       - name: shipping_service
-        description: TODO
       - name: estimated_delivery_at
-        description: TODO
       - name: delivered_at
-        description: TODO
       - name: status
-        description: TODO
 
 
   - name: stg_products
     description: >
-      TODO
+      Table containing the products
     columns:
       - name: product_id
-        description: TODO
         tests:
           - not_null
           - unique
       - name: name
-        description: TODO
       - name: price
-        description: TODO
+        tests:
+          - not_null
+          - positive_values
       - name: quantity
-        description: TODO
+        tests:
+          - not_null
+          - positive_values
 
 
   - name: stg_promos
     description: >
-      TODO
+      Table containing all the promos, both active and inactive ones
     columns:
       - name: promo_id
-        description: TODO
         tests:
           - not_null
           - unique
-      - name: discout
-        description: TODO
+      - name: discount
         tests:
           - not_null
+          - positive_values
       - name: status
-        description: TODO
+        tests:
+          - accepted_values:
+              values: ['active', 'inactive']
 
 
   - name: stg_users
     description: >
-      TODO
+      Table containing the users
     columns:
       - name: user_id
-        description: TODO
         tests:
           - not_null
           - unique
       - name: first_name
-        description: TODO
       - name: last_name
-        description: TODO
       - name: email
-        description: TODO
       - name: phone_number
-        description: TODO
       - name: created_at
-        description: TODO
         tests:
           - not_null
       - name: updated_at
-        description: TODO
         tests:
           - not_null
       - name: address_id
-        description: TODO
         tests:
           - not_null
           - relationships:

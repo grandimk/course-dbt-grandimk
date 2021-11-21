@@ -3,6 +3,17 @@ version: 2
 sources:
   - name: greenery
     schema: public
+    database: dbt
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
     
     tables:
       - name: addresses
@@ -10,6 +21,7 @@ sources:
           One record per address. Contains addresses details (zip, state and country)
 
       - name: events
+        loaded_at_field: created_at
         description: >
           One record per event. Contains users events details (type, url and creation) 
 
@@ -18,6 +30,7 @@ sources:
           One record per item in a given order. Contains quantity of an item in a order
 
       - name: orders
+        loaded_at_field: created_at
         description: >
           One record per order. Contains orders details
 
@@ -29,9 +42,7 @@ sources:
         description: >
           One record per promo. Contains promos discount and status
 
-      # Note: additional table in the db, not depicted in the ERD
-      # - name: superheroes
-
       - name: users
+        loaded_at_field: created_at
         description: >
           One record per user. Contains users information
