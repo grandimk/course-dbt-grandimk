@@ -25,7 +25,7 @@ SELECT
         addresses.address,
         addresses.zipcode,
         addresses.state,
-        addresses.countryaddresses
+        addresses.country
     ) AS address,
 
     users.created_at

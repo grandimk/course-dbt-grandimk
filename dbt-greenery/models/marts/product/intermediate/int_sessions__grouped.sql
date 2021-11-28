@@ -12,7 +12,7 @@ events AS (
 
 SELECT
     session_id,
-    user_id,
+    -- user_id,
     min(created_at) AS started_at,
     max(created_at) AS finished_at
 
