@@ -4,9 +4,16 @@
     )
 }}
 
+WITH
+
+products AS (
+    SELECT * FROM {{ source('greenery', 'products') }}
+)
+
 SELECT
     product_id,
     name,
     price,
     quantity
-FROM {{ source('greenery', 'products') }}
+
+FROM products

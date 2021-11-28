@@ -14,7 +14,6 @@ models:
       - name: state
       - name: country
 
-
   - name: stg_events
     description: >
       Table containing the events of the users on the website
@@ -37,7 +36,6 @@ models:
           - not_null
       - name: created_at
 
-
   - name: stg_order_items
     description: >
       Table containing the association between an order
@@ -52,7 +50,6 @@ models:
       - name: quantity
         tests:
           - positive_values
-
 
   - name: stg_orders
     description: >
@@ -88,7 +85,6 @@ models:
       - name: delivered_at
       - name: status
 
-
   - name: stg_products
     description: >
       Table containing the products
@@ -107,7 +103,6 @@ models:
           - not_null
           - positive_values
 
-
   - name: stg_promos
     description: >
       Table containing all the promos, both active and inactive ones
@@ -124,7 +119,6 @@ models:
         tests:
           - accepted_values:
               values: ['active', 'inactive']
-
 
   - name: stg_users
     description: >

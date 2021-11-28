@@ -4,6 +4,12 @@
     )
 }}
 
+WITH
+
+events AS (
+    SELECT * FROM {{ source('greenery', 'events') }}
+)
+
 SELECT
     event_id,
     session_id,
@@ -11,4 +17,5 @@ SELECT
     event_type,
     page_url,
     created_at
-FROM {{ source('greenery', 'events') }}
+
+FROM events

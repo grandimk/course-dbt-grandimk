@@ -4,6 +4,12 @@
     )
 }}
 
+WITH
+
+users AS (
+    SELECT * FROM {{ source('greenery', 'users') }}
+)
+
 SELECT
     user_id,
     first_name,
@@ -13,4 +19,5 @@ SELECT
     created_at,
     updated_at,
     address_id
-FROM {{ source('greenery', 'users') }}
+
+FROM users

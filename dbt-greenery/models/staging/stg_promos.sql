@@ -4,8 +4,15 @@
     )
 }}
 
+WITH
+
+promos AS (
+    SELECT * FROM {{ source('greenery', 'promos') }}
+)
+
 SELECT
     promo_id,
     discout AS discount,
     status
-FROM {{ source('greenery', 'promos') }}
+
+FROM promos
