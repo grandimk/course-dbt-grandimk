@@ -7,7 +7,7 @@ SELECT count(distinct user_id) FROM dbt_marco_g.stg_users;
 ```
 
 # On average, how many orders do we receive per hour?
-Answer: **8.125**
+Answer: **8.163**
 
 Query:
 ``` sql
@@ -42,8 +42,8 @@ Answer:
 | # purchases | # users |
 |-------------|---------|
 |            1|       25|
-|            2|       25|
-|           3+|       78|
+|            2|       22|
+|           3+|       81|
 
 Query:
 ``` sql
