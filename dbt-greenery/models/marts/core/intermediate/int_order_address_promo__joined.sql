@@ -33,8 +33,8 @@ SELECT
     orders.order_cost,
     orders.shipping_cost,
     CASE
-        WHEN promos.discount IS NOT NULL THEN promos.discount
-        ELSE promos.discount
+        WHEN orders.promo_id IS NOT NULL THEN promos.discount
+        ELSE 0
     END AS discount,
     orders.order_total,
     orders.shipping_service,
