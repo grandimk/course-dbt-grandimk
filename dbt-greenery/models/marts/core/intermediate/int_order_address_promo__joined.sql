@@ -16,7 +16,7 @@ addresses AS (
 
 promos AS (
     SELECT * FROM {{ ref('stg_promos') }}
-),
+)
 
 SELECT
     orders.order_id,
