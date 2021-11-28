@@ -32,7 +32,7 @@ SELECT
     orders.created_at,
     orders.order_cost,
     orders.shipping_cost,
-    orders.discount,
+    promos.discount,
     orders.order_total,
     orders.shipping_service,
     orders.delivered_at,
