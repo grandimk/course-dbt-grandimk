@@ -18,17 +18,18 @@ order_items AS (
 orders_with_quantity AS (
     SELECT
         orders.order_id,
+        orders.user_id,
         orders.order_total,
         orders.created_at,
         orders.delivered_at,
-        sum(order_items.quantity) as number_of_items
+        sum(order_items.quantity) AS number_of_items
 
     FROM orders
     INNER JOIN order_items
         ON orders.order_id = order_items.order_id
     WHERE orders.created_at IS NOT NULL
         AND orders.status = 'delivered'
-    GROUP BY 1, 2, 3, 4
+    GROUP BY 1, 2, 3, 4, 5
 ),
 
 users AS (
