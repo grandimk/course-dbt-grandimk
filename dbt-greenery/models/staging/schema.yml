@@ -29,9 +29,6 @@ models:
       - name: user_id
         tests:
           - not_null
-          - relationships:
-              to: ref('users')
-              field: user_id
       - name: event_type
         tests:
           - not_null
@@ -39,8 +36,6 @@ models:
         tests:
           - not_null
       - name: created_at
-        tests:
-          - not_null
 
 
   - name: stg_order_items
@@ -51,15 +46,9 @@ models:
       - name: order_id
         tests:
           - not_null
-          - relationships:
-              to: ref('orders')
-              field: order_id
       - name: product_id
         tests:
           - not_null
-          - relationships:
-              to: ref('products')
-              field: product_id
       - name: quantity
         tests:
           - positive_values
@@ -78,18 +67,10 @@ models:
       - name: user_id
         tests:
           - not_null
-          - relationships:
-              to: ref('users')
-              field: user_id
       - name: address_id
         tests:
           - not_null
-          - relationships:
-              to: ref('addresses')
-              field: address_id
       - name: created_at
-        tests:
-          - not_null
       - name: order_cost
         tests:
           - not_null
@@ -166,6 +147,3 @@ models:
       - name: address_id
         tests:
           - not_null
-          - relationships:
-              to: ref('addresses')
-              field: address_id
