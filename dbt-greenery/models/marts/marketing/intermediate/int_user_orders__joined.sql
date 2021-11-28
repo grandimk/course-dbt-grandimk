@@ -37,7 +37,7 @@ users AS (
 )
 
 SELECT
-    concat(order_items.order_id, '-', users.user_id) AS id,
+    concat(orders_wq.order_id, '-', users.user_id) AS id,
     users.user_id,
     users.first_name,
     users.last_name,
@@ -48,5 +48,5 @@ SELECT
     orders_wq.number_of_items
 
 FROM users
-INNER JOIN orders_with_quantity as orders_wq
+INNER JOIN orders_with_quantity AS orders_wq
     ON users.user_id = orders_wq.user_id
