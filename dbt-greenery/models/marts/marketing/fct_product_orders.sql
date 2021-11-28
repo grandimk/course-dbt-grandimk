@@ -14,6 +14,7 @@ SELECT
     product_id,
     name,
     order_id,
-    quantity
+    quantity,
+    unit_cost
 
 FROM product_orders

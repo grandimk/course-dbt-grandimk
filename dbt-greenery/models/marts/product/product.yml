@@ -15,6 +15,9 @@ models:
       - name: user_id
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_users')
+              field: user_id
       - name: viewed_at
         tests:
           - not_null

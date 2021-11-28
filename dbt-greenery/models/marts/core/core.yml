@@ -57,17 +57,28 @@ models:
         tests:
           - not_null
           - unique
-      - name: promo_id
-        tests:
-          - not_null
       - name: user_id
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_users')
+              field: user_id
       - name: delivery_address
+        tests:
+          - not_null
       - name: created_at
+        tests:
+          - not_null
       - name: order_cost
+        tests:
+          - not_null
+          - positive_values
       - name: shipping_cost
+        tests:
+          - not_null
       - name: discount
+        tests:
+          - not_null
       - name: order_total
         tests:
           - not_null

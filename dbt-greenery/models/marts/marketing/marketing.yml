@@ -8,11 +8,54 @@ models:
       - name: product_id
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_id
       - name: name
       - name: order_id
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_orders')
+              field: order_id
       - name: quantity
+        tests:
+          - not_null
+          - positive_values
+      - name: unit_cost
+        tests:
+          - not_null
+          - positive_values
+
+  - name: fct_user_orders
+    description: >
+      Users in orders facts
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_users')
+              field: user_id
+      - name: first_name
+      - name: last_name
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_orders')
+              field: order_id
+      - name: order_total
+        tests:
+          - not_null
+          - positive_values
+      - name: created_at
+        tests:
+          - not_null
+      - name: delivered_at
+        tests:
+          - not_null
+      - name: number_of_items
         tests:
           - not_null
           - positive_values

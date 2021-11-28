@@ -32,7 +32,10 @@ SELECT
     orders.created_at,
     orders.order_cost,
     orders.shipping_cost,
-    promos.discount,
+    CASE
+        WHEN promos.discount IS NOT NULL THEN promos.discount
+        ELSE promos.discount
+    END AS discount,
     orders.order_total,
     orders.shipping_service,
     orders.delivered_at,

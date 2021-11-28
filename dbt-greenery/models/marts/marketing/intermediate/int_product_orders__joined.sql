@@ -1,6 +1,7 @@
 {{
     config(
-        materialized='table'
+        materialized='incremental',
+        unique_key='id'
     )
 }}
 
@@ -15,10 +16,12 @@ order_items AS (
 )
 
 SELECT
+    concat(order_items.order_id, '-', products.product_id) AS id,
     products.product_id,
     products.name,
     order_items.order_id,
-    order_items.quantity
+    order_items.quantity,
+    products.price AS unit_cost
 
 FROM products
 INNER JOIN order_items
