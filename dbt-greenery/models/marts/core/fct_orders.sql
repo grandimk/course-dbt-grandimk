@@ -7,7 +7,7 @@
 WITH
 
 orders AS (
-    SELECT * FROM {{ ref('int_order_address__joined') }}
+    SELECT * FROM {{ ref('int_order_address_promo__joined') }}
 )
 
 SELECT
