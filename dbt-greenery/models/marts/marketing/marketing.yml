@@ -48,7 +48,6 @@ models:
       - name: order_total
         tests:
           - not_null
-          - positive_values
       - name: created_at
         tests:
           - not_null
