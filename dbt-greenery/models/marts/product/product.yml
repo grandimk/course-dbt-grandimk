@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: fct_page_views
+    description: >
+      Page view facts
+    columns:
+      - name: page_view_id
+        tests:
+          - not_null
+          - unique
+      - name: page_url
+        tests:
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+      - name: viewed_at
+        tests:
+          - not_null

@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fct_product_orders
+    description: >
+      Product in orders facts
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+      - name: name
+      - name: order_id
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+          - positive_values

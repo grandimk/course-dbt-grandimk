@@ -131,6 +131,8 @@ models:
       - name: first_name
       - name: last_name
       - name: email
+        tests:
+          - not_null
       - name: phone_number
       - name: created_at
         tests:

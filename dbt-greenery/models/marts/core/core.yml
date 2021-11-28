@@ -1,0 +1,82 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: >
+      Product dimension
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+      - name: price
+        tests:
+          - not_null
+          - positive_values
+
+  - name: dim_promos
+    description: >
+      Promo dimension
+    columns:
+      - name: promo_id
+        tests:
+          - not_null
+          - unique
+      - name: discount
+        tests:
+          - not_null
+          - positive_values
+
+  - name: dim_users
+    description: >
+      User dimension
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+      - name: last_name
+      - name: email
+        tests:
+          - not_null
+      - name: phone_number
+      - name: address
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+
+  - name: fct_orders
+    description: >
+      Order facts
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: promo_id
+        tests:
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+      - name: delivery_address
+      - name: created_at
+      - name: order_cost
+      - name: shipping_cost
+      - name: discount
+      - name: order_total
+        tests:
+          - not_null
+      - name: shipping_service
+        tests:
+          - not_null
+      - name: delivered_at
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - not_null
