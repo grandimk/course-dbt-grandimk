@@ -13,7 +13,7 @@ orders AS (
 
 order_items AS (
     SELECT * FROM {{ ref('stg_order_items') }}
-)
+),
 
 orders_with_quantity AS (
     SELECT
