@@ -20,12 +20,12 @@ sessions_with_unique_user AS (
 )
 
 SELECT
-    session_id,
-    user_id,
-    min(created_at) AS started_at,
-    max(created_at) AS finished_at
+    events.session_id,
+    events.user_id,
+    min(events.created_at) AS started_at,
+    max(events.created_at) AS finished_at
 
 FROM events
 INNER JOIN sessions_with_unique_user AS sessions_wuu
     ON events.session_id = sessions_wuu.session_id
-WHERE created_at IS NOT NULL
+WHERE events.created_at IS NOT NULL
