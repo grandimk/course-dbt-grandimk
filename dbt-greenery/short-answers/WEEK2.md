@@ -50,7 +50,7 @@ Marts models are grouped by business unit:
 - Marketing;
 - Product.
 
-For each unit there is a dedicated folder containing models and an `intermediate` folder
+For each unit there is a dedicated folder containing models and an **intermediate** folder
 containing models used to join and group staging models.
 
 ## Core
