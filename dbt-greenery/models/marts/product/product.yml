@@ -21,3 +21,24 @@ models:
       - name: viewed_at
         tests:
           - not_null
+
+  - name: fct_session
+    description: >
+      Session facts
+    columns:
+      - name: session_id
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_users')
+              field: user_id
+      - name: started_at
+        tests:
+          - not_null
+      - name: finished_at
+        tests:
+          - not_null

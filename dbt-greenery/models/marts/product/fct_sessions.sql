@@ -12,7 +12,7 @@ sessions AS (
 
 SELECT
     session_id,
-    -- user_id,
+    user_id,
     started_at,
     finished_at
 
