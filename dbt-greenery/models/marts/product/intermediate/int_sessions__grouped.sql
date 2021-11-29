@@ -8,7 +8,7 @@ WITH
 
 events AS (
     SELECT * FROM {{ ref('stg_events') }}
-)
+),
 
 sessions_with_unique_user AS (
     SELECT
