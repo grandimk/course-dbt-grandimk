@@ -22,7 +22,7 @@ models:
         tests:
           - not_null
 
-  - name: fct_session
+  - name: fct_sessions
     description: >
       Session facts
     columns:

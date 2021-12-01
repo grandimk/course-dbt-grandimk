@@ -16,7 +16,7 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_orders')
+              to: ref('fct_orders')
               field: order_id
       - name: quantity
         tests:
@@ -43,7 +43,7 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_orders')
+              to: ref('fct_orders')
               field: order_id
       - name: order_total
         tests:
