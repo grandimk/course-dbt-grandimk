@@ -60,7 +60,11 @@ models:
           - not_null
           - unique
       - name: promo_id
-        description: TODO          
+        tests:
+          - dbt_utils.relationships_where:
+              to: ref('stg_promo')
+              field: promo_id
+              from_condition: promo_id IS NOT NULL
       - name: user_id
         tests:
           - not_null
