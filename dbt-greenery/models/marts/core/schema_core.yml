@@ -90,10 +90,10 @@ models:
       - name: shipping_service
       - name: tracking_id
         tests:
-          - dbt_utils.not_null_where:
+          - not_null:
               where: "status = 'shipped'"
       - name: estimated_delivery_at
       - name: delivered_at
         tests:
-          - dbt_utils.not_null_where:
+          - not_null:
               where: "status = 'delivered'"
