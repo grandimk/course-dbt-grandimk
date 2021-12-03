@@ -49,11 +49,7 @@ models:
         tests:
           - not_null
       - name: created_at
-        tests:
-          - not_null
       - name: delivered_at
-        tests:
-          - not_null
       - name: number_of_items
         tests:
           - not_null
