@@ -29,6 +29,7 @@ SELECT
         addresses.country
     ) AS delivery_address,
 
+    orders.status,
     orders.created_at,
     orders.order_cost,
     orders.shipping_cost,
@@ -38,8 +39,9 @@ SELECT
     END AS discount,
     orders.order_total,
     orders.shipping_service,
-    orders.delivered_at,
-    orders.status
+    orders.tracking_id,
+    orders.estimated_delivery_at
+    orders.delivered_at
 
 FROM orders
 INNER JOIN addresses
