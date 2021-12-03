@@ -51,6 +51,23 @@ models:
         tests:
           - positive_values
 
+  - name: stg_promos
+    description: >
+      Table containing all the promos, both active and inactive ones
+    columns:
+      - name: promo_id
+        tests:
+          - not_null
+          - unique
+      - name: discount
+        tests:
+          - not_null
+          - positive_values
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['active', 'inactive']
+
   - name: stg_orders
     description: >
       Table containing the orders of the users
@@ -106,23 +123,6 @@ models:
         tests:
           - not_null
           - positive_values
-
-  - name: stg_promos
-    description: >
-      Table containing all the promos, both active and inactive ones
-    columns:
-      - name: promo_id
-        tests:
-          - not_null
-          - unique
-      - name: discount
-        tests:
-          - not_null
-          - positive_values
-      - name: status
-        tests:
-          - accepted_values:
-              values: ['active', 'inactive']
 
   - name: stg_users
     description: >
