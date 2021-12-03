@@ -7,7 +7,7 @@
 WITH
 
 events AS (
-    SELECT * FROM {{ ref('int_sessions__deduplicated') }}
+    SELECT * FROM {{ ref('stg_events') }}
 ),
 
 sessions_with_unique_user AS (
