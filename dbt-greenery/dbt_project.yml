@@ -25,4 +25,5 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_modules"
 
 on-run-end:
-  - "grant usage on schema {{ greenery.schema }} to  to reporting"
+  - "grant usage on schema {{ target.schema }} to reporting"
+  - "grant select on all tables in schema {{ target.schema }} to reporting"
