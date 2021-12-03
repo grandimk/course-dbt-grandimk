@@ -24,6 +24,5 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_modules"
 
-
-# Configuring models
-# Full documentation: https://docs.getdbt.com/docs/configuring-models
+on-run-end:
+  - "grant usage on schema {{ greenery.schema }} to  to reporting"
