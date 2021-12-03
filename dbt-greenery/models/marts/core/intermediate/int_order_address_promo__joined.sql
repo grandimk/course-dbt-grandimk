@@ -40,7 +40,7 @@ SELECT
     orders.order_total,
     orders.shipping_service,
     orders.tracking_id,
-    orders.estimated_delivery_at
+    orders.estimated_delivery_at,
     orders.delivered_at
 
 FROM orders
