@@ -27,8 +27,6 @@ orders_with_quantity AS (
     FROM orders
     INNER JOIN order_items
         ON orders.order_id = order_items.order_id
-    WHERE orders.created_at IS NOT NULL
-        AND orders.status = 'delivered'
     GROUP BY 1, 2, 3, 4, 5
 ),
 
