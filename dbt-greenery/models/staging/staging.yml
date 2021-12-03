@@ -64,7 +64,7 @@ models:
           - dbt_utils.relationships_where:
               to: source('greenery', 'promos')
               field: promo_id
-              from_condition: id IS NOT NULL
+              from_condition: promo_id IS NOT NULL
       - name: user_id
         tests:
           - not_null
