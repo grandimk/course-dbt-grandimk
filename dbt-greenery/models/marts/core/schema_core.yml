@@ -71,6 +71,9 @@ models:
           - accepted_values:
               values: ['pending', 'preparing', 'shipped', 'delivered']
       - name: created_at
+        test-paths:
+          - dbt_utils.not_null_proportion:
+              at_least: 0.95
       - name: order_cost
         tests:
           - not_null
