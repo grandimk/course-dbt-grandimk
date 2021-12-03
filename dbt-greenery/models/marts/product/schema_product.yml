@@ -12,6 +12,9 @@ models:
       - name: page_url
         tests:
           - not_null
+      - name: session_id
+        tests:
+          - not_null
       - name: user_id
         tests:
           - not_null
@@ -19,8 +22,6 @@ models:
               to: ref('dim_users')
               field: user_id
       - name: viewed_at
-        tests:
-          - not_null
 
   - name: fct_sessions
     description: >

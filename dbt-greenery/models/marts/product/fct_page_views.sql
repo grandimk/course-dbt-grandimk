@@ -1,22 +1,21 @@
 {{
     config(
-        materialized='incremental',
-        unique_key='page_view_id'
+        materialized='table'
     )
 }}
 
 WITH
 
-orders AS (
-    SELECT * FROM {{ ref('stg_events') }}
+events AS (
+    SELECT * FROM {{ ref('int_events__unique_user') }}
 )
 
 SELECT
     event_id AS page_view_id,
     page_url,
+    session_id,
     user_id,
     created_at AS viewed_at
 
 FROM events
-WHERE created_at IS NOT NULL
-    AND event_type = 'page_view'
+WHERE event_type = 'page_view'

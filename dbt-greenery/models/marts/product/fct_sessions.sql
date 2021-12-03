@@ -6,14 +6,15 @@
 
 WITH
 
-sessions AS (
-    SELECT * FROM {{ ref('int_sessions__grouped') }}
+events AS (
+    SELECT * FROM {{ ref('int_events__unique_user') }}
 )
 
 SELECT
     session_id,
     user_id,
-    started_at,
-    finished_at
+    min(created_at) AS started_at,
+    max(created_at) AS finished_at
 
-FROM sessions
+FROM events
+GROUP BY 1, 2
