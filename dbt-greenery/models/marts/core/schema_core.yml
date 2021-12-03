@@ -69,7 +69,7 @@ models:
       - name: status
         tests:
           - accepted_values:
-            values: ['pending', 'preparing', 'shipped', 'delivered']
+              values: ['pending', 'preparing', 'shipped', 'delivered']
       - name: created_at
       - name: order_cost
         tests:

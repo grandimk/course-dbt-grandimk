@@ -91,8 +91,7 @@ logically these values have to be positive.
 # Did you find any “bad” data as you added and ran tests on your models? How did you go about either cleaning the data in the dbt model or adjusting your assumptions/tests?
 In the source data I found the following isseus:
 
-- in `orders` there are rows with `created_at` at `NULL`, I kept these rows in the staging models but removed
-    them in the marts models;
+- in `orders` there are rows with `created_at` at `NULL`, I kept these rows both in the staging models and in the marts models;
 - in `events` there are rows with `created_at` at `NULL`, the same of above;
 - in `orders` there is a row with `order_total < 0`, I changed my assumption and removed the tests;
 - in `events` there are rows where the same `session_id` is associated with different `user_id`, this should
