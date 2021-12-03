@@ -28,5 +28,4 @@ SELECT
 FROM events
 INNER JOIN sessions_with_unique_user AS sessions_wuu
     ON events.session_id = sessions_wuu.session_id
-WHERE events.created_at IS NOT NULL
 GROUP BY 1, 2

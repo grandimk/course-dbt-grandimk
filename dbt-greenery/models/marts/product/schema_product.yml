@@ -37,8 +37,4 @@ models:
               to: ref('dim_users')
               field: user_id
       - name: started_at
-        tests:
-          - not_null
       - name: finished_at
-        tests:
-          - not_null
