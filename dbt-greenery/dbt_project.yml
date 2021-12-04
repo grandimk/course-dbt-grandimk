@@ -30,4 +30,4 @@ on-run-end:
 models:
   dbt_greenery:
     marts:
-      +post-hook: "{{ grant(role='reporting') }}"
+      +post-hook: "{{ grant(role_name='reporting') }}"
