@@ -1,0 +1,9 @@
+version: 2
+
+macros:
+  - name: grant
+    description: grant usage and select privileges to role
+    arguments:
+      - name: role
+        type: string
+        description: the name of the role to grant to
