@@ -1,9 +1,0 @@
-version: 2
-
-macros:
-  - name: positive_values
-    description: test if the values of a column are positives
-    arguments:
-      - name: column_name
-        type: string
-        description: the name of the column to test
