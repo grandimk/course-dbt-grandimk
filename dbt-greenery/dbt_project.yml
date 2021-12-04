@@ -26,4 +26,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 on-run-end:
   - "grant usage on schema {{ target.schema }} to reporting"
-  - "grant select on all tables in schema {{ target.schema }} to reporting"
+
+models:
+  dbt_greenery:
+    marts:
+    +post-hook: "grant select on {{ this }} to reporting"
