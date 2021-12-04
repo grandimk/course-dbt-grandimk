@@ -2,8 +2,8 @@ version: 2
 
 macros:
   - name: grant
-    description: grant usage and select privileges to role
+    description: grant usage and select privileges to role_name
     arguments:
-      - name: role
+      - name: role_name
         type: string
         description: the name of the role to grant to
