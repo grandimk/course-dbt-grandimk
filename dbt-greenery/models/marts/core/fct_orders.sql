@@ -7,7 +7,7 @@
 WITH
 
 orders AS (
-    {{ with_address('ststg_ordersg_users') }}
+    {{ with_address('stg_orders') }}
 ),
 
 promos AS (
