@@ -42,7 +42,7 @@ models:
         tests:
           - not_null
       - name: phone_number
-      - name: address
+      - name: residential_address
         tests:
           - not_null
       - name: created_at

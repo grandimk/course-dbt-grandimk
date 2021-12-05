@@ -15,3 +15,10 @@ macros:
         type: string
         description: the name of the column to test
 
+  - name: with_address
+    description: enrich a model having the address_id by adding the full address
+    arguments:
+      - name: model_name
+        type: string
+        description: the name of the model to enrich
+

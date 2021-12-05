@@ -7,7 +7,7 @@
 WITH
 
 users AS (
-    SELECT * FROM {{ ref('int_user_address__joined') }}
+    {{ with_address('stg_users') }}
 )
 
 SELECT
@@ -16,7 +16,7 @@ SELECT
     last_name,
     email,
     phone_number,
-    address,
+    full_address AS main_address,
     created_at
 
 FROM users

@@ -7,7 +7,11 @@
 WITH
 
 orders AS (
-    SELECT * FROM {{ ref('int_order_address_promo__joined') }}
+    {{ with_address('ststg_ordersg_users') }}
+),
+
+promos AS (
+    SELECT * FROM {{ ref('stg_promos') }}
 )
 
 SELECT
@@ -18,7 +22,10 @@ SELECT
     created_at,
     order_cost,
     shipping_cost,
-    discount,
+    CASE
+        WHEN orders.promo_id IS NOT NULL THEN promos.discount
+        ELSE 0
+    END AS discount,
     order_total,
     shipping_service,
     tracking_id,
@@ -26,3 +33,5 @@ SELECT
     delivered_at
 
 FROM orders
+LEFT JOIN promos
+    ON orders.promo_id = promos.promo_id
