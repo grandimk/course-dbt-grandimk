@@ -18,7 +18,7 @@ SELECT
     order_id,
     user_id,
     full_address AS delivery_address,
-    status,
+    orders.status,
     created_at,
     order_cost,
     shipping_cost,
