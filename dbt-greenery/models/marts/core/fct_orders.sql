@@ -17,7 +17,7 @@ promos AS (
 SELECT
     order_id,
     user_id,
-    delivery_address,
+    full_address AS delivery_address,
     status,
     created_at,
     order_cost,
