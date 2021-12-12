@@ -11,4 +11,4 @@ exposures:
       name: Marco Grandi
       email: marco.grandi@cloudacademy.com
     depends_on:
-      - ref(‘fct_product_funnel’)
+      - ref('fct_product_funnel')
