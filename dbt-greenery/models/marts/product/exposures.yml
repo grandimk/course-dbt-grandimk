@@ -1,0 +1,12 @@
+exposures:
+  - name: Product Funnel Dashboard
+    description: >
+      Models that are critical to our product funnel dashboard
+    type: dashboard
+    maturity: low
+
+    owner:
+      name: Marco Grandi
+      email: marco.grandi@cloudacademy.com
+    depends_on:
+      - ref(‘fct_product_funnel’)
